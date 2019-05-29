@@ -15,6 +15,12 @@
 		4C849D64229D5BD700E5ADBF /* TableViewPrecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C849D63229D5BD700E5ADBF /* TableViewPrecTests.swift */; };
 		4C849D6F229D5BD700E5ADBF /* TableViewPrecUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C849D6E229D5BD700E5ADBF /* TableViewPrecUITests.swift */; };
 		4C849D7D229E87E600E5ADBF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4C849D7C229E87E600E5ADBF /* .gitignore */; };
+		4C849D7F229E8C6400E5ADBF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C849D7E229E8C6400E5ADBF /* TableViewController.swift */; };
+		4C849D81229E8CB000E5ADBF /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C849D80229E8CB000E5ADBF /* addViewController.swift */; };
+		4C849D83229E8CD600E5ADBF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C849D82229E8CD600E5ADBF /* DetailViewController.swift */; };
+		4C849D87229E93A300E5ADBF /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C849D84229E93A300E5ADBF /* clock.png */; };
+		4C849D88229E93A300E5ADBF /* pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C849D85229E93A300E5ADBF /* pencil.png */; };
+		4C849D89229E93A300E5ADBF /* cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C849D86229E93A300E5ADBF /* cart.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		4C849D6E229D5BD700E5ADBF /* TableViewPrecUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPrecUITests.swift; sourceTree = "<group>"; };
 		4C849D70229D5BD700E5ADBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C849D7C229E87E600E5ADBF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		4C849D7E229E8C6400E5ADBF /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		4C849D80229E8CB000E5ADBF /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
+		4C849D82229E8CD600E5ADBF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4C849D84229E93A300E5ADBF /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		4C849D85229E93A300E5ADBF /* pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencil.png; sourceTree = "<group>"; };
+		4C849D86229E93A300E5ADBF /* cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,9 @@
 		4C849D4A229D5BD400E5ADBF /* TableViewPrec */ = {
 			isa = PBXGroup;
 			children = (
+				4C849D86229E93A300E5ADBF /* cart.png */,
+				4C849D84229E93A300E5ADBF /* clock.png */,
+				4C849D85229E93A300E5ADBF /* pencil.png */,
 				4C849D4B229D5BD400E5ADBF /* AppDelegate.swift */,
 				4C849D4F229D5BD400E5ADBF /* Main.storyboard */,
 				4C849D55229D5BD700E5ADBF /* Assets.xcassets */,
@@ -106,6 +121,9 @@
 				4C849D5A229D5BD700E5ADBF /* Info.plist */,
 				4C849D52229D5BD400E5ADBF /* TableViewPrec.xcdatamodeld */,
 				4C849D7C229E87E600E5ADBF /* .gitignore */,
+				4C849D7E229E8C6400E5ADBF /* TableViewController.swift */,
+				4C849D80229E8CB000E5ADBF /* addViewController.swift */,
+				4C849D82229E8CD600E5ADBF /* DetailViewController.swift */,
 			);
 			path = TableViewPrec;
 			sourceTree = "<group>";
@@ -232,7 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C849D89229E93A300E5ADBF /* cart.png in Resources */,
+				4C849D88229E93A300E5ADBF /* pencil.png in Resources */,
 				4C849D7D229E87E600E5ADBF /* .gitignore in Resources */,
+				4C849D87229E93A300E5ADBF /* clock.png in Resources */,
 				4C849D59229D5BD700E5ADBF /* LaunchScreen.storyboard in Resources */,
 				4C849D56229D5BD700E5ADBF /* Assets.xcassets in Resources */,
 				4C849D51229D5BD400E5ADBF /* Main.storyboard in Resources */,
@@ -261,6 +282,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C849D54229D5BD400E5ADBF /* TableViewPrec.xcdatamodeld in Sources */,
+				4C849D7F229E8C6400E5ADBF /* TableViewController.swift in Sources */,
+				4C849D83229E8CD600E5ADBF /* DetailViewController.swift in Sources */,
+				4C849D81229E8CB000E5ADBF /* addViewController.swift in Sources */,
 				4C849D4C229D5BD400E5ADBF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
