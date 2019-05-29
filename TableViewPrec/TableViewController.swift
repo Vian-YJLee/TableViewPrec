@@ -11,7 +11,10 @@ import UIKit
 var items = ["책 구매", "고양이밥","코딩"]
 var itemsImageFile = ["cart.png", "clock.png", "pencil.png"]
 
+//View에 넣을 자료 배열
+
 class TableViewController: UITableViewController {
+
 
     @IBOutlet var tvListView: UITableView!
     
@@ -22,7 +25,10 @@ class TableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        // 바에 Edit button 생성
+        
     }
 
     // MARK: - Table view data source
@@ -30,16 +36,20 @@ class TableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
+        
+        //섹션을 둘로 나눔 초기값은 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return items.count
+        
+        //배열 수 만큼 섹션 생성
     }
 
-    
+    //배열 안 사진과 내용 테이블뷰 섹션에 넣기
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
 
         // Configure the cell...
         
@@ -48,6 +58,7 @@ class TableViewController: UITableViewController {
 
         return cell
     }
+    
     
 
     /*
@@ -58,24 +69,46 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
+            items.remove(at: (indexPath as NSIndexPath).row)
+            itemsImageFile.remove(at: (indexPath as NSIndexPath).row)
+            
+            
             // Delete the row from the data source
+            // 왼쪽으로 밀어서 삭제하기 코드 활성화
+            
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
-    /*
+    
     // Override to support rearranging the table view.
+    // 섹션 순서 변경. 임시공간을 사용하는 간단한 함수 사용
+    
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        
+        let itemToMove =  items[(fromIndexPath as NSIndexPath).row]
+        let itemImageToMove = itemsImageFile[(fromIndexPath as NSIndexPath).row]
+        // 이동할 텍스트와 이미지를 각각 임시 상수에 저장
+        
+        items.remove(at: (fromIndexPath as NSIndexPath).row)
+        itemsImageFile.remove(at: (fromIndexPath as NSIndexPath).row)
+        //이동할 텍스트와 이미지를 삭제, 삭제 후 인덱스 재정렬
+        
+        
+        items.insert(itemToMove, at: (to as NSIndexPath).row)
+        itemsImageFile.insert(itemImageToMove, at: (to as NSIndexPath).row)
+        //위에서 삭제된 텍스트와 이미지를 이동할 위치로 다시 삽입
 
     }
-    */
+    
 
     /*
     // Override to support conditional rearranging of the table view.
