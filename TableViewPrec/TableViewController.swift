@@ -28,7 +28,12 @@ class TableViewController: UITableViewController {
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         // 바에 Edit button 생성
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tvListView.reloadData()
         
+        //데이터 재호출. 추가된 내용 표시
     }
 
     // MARK: - Table view data source
@@ -79,13 +84,18 @@ class TableViewController: UITableViewController {
             
             
             // Delete the row from the data source
-            // 왼쪽으로 밀어서 삭제하기 코드 활성화
+            // 왼쪽으로 밀어서 삭제하기
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+    
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        
+        return "삭제"
+    } //Delete 대신 삭제 로 표기
     
 
     
@@ -118,14 +128,22 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "sgDetail" {
+            let cell = sender as! UITableViewCell
+            let indexPath = self.tvListView.indexPath(for: cell)
+            let detailView = segue.destination as! DetailViewController
+            
+            detailView.receiveItem(items[((indexPath as NSIndexPath?)?.row)!])
+            
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

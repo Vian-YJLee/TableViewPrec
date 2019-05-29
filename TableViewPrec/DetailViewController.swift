@@ -9,15 +9,24 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var receiveItem = "" //목록에서 텍스트 받아올 변수
+    
 
     @IBOutlet var lblItem: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        lblItem.text =  receiveItem
+        
     }
     
+    func receiveItem(_ item:String)
+    {
+        receiveItem = item
+    }
+    //목록에서 변수 받아올 함수. 클로저를 쓸수 있는 형태아닌가..?
 
     /*
     // MARK: - Navigation
