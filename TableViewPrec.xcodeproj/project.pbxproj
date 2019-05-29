@@ -14,6 +14,7 @@
 		4C849D59229D5BD700E5ADBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C849D57229D5BD700E5ADBF /* LaunchScreen.storyboard */; };
 		4C849D64229D5BD700E5ADBF /* TableViewPrecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C849D63229D5BD700E5ADBF /* TableViewPrecTests.swift */; };
 		4C849D6F229D5BD700E5ADBF /* TableViewPrecUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C849D6E229D5BD700E5ADBF /* TableViewPrecUITests.swift */; };
+		4C849D7D229E87E600E5ADBF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 4C849D7C229E87E600E5ADBF /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		4C849D6A229D5BD700E5ADBF /* TableViewPrecUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewPrecUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C849D6E229D5BD700E5ADBF /* TableViewPrecUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPrecUITests.swift; sourceTree = "<group>"; };
 		4C849D70229D5BD700E5ADBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C849D7C229E87E600E5ADBF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				4C849D57229D5BD700E5ADBF /* LaunchScreen.storyboard */,
 				4C849D5A229D5BD700E5ADBF /* Info.plist */,
 				4C849D52229D5BD400E5ADBF /* TableViewPrec.xcdatamodeld */,
+				4C849D7C229E87E600E5ADBF /* .gitignore */,
 			);
 			path = TableViewPrec;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C849D7D229E87E600E5ADBF /* .gitignore in Resources */,
 				4C849D59229D5BD700E5ADBF /* LaunchScreen.storyboard in Resources */,
 				4C849D56229D5BD700E5ADBF /* Assets.xcassets in Resources */,
 				4C849D51229D5BD400E5ADBF /* Main.storyboard in Resources */,
