@@ -8,21 +8,72 @@
 
 import UIKit
 
-class addViewController: UIViewController {
+class addViewController: UIViewController, UIPickerViewDelegate,UIPickerViewDataSource {
+    
+    
+    let MAX_ARRAY_NUM = 3
+    let PICKER_VIEW_CULUMN = 1
+    let PICKER_VIEW_HEIGHT:CGFloat = 40
+    var imageArray = [UIImage?]()
+    var fileName = ""
+    //이미지 배열은 TableViewController 에서 전역선언된 배열을 가져와 사용
 
     @IBOutlet var tfAddItem: UITextField!
-    
+    @IBOutlet weak var pickerImage: UIPickerView!
+    @IBOutlet var pickedImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for i in 0..<MAX_ARRAY_NUM {
+            let image = UIImage(named: itemsImageFile[i])
+            
+            imageArray.append(image!)
+        }
+        
+        pickedImageView.image = imageArray[0]
+        fileName = itemsImageFile[0]
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+   
+    //PickerView로 아이콘 선택하기
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return PICKER_VIEW_CULUMN
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return PICKER_VIEW_HEIGHT
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return itemsImageFile.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        
+        let ImageView = UIImageView(image:imageArray[row])
+        ImageView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        
+        return ImageView
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        pickedImageView.image = imageArray[row]
+        fileName = itemsImageFile[row]
     }
     
     @IBAction func btnAddItem(_ sender: UIButton) {
         
         items.append(tfAddItem.text!)
-        itemsImageFile.append("clock.png")
+        itemsImageFile.append(fileName)
         tfAddItem.text = ""  //textfield 내용 초기화
         
         
@@ -32,14 +83,6 @@ class addViewController: UIViewController {
         //add 버튼 동작. TableViewController 의 items 배열에 작성한 내용 보내기
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
